@@ -18,10 +18,5 @@ RUN cd ~ && \
 
 EXPOSE 8080
 
-RUN cd ~/wildfly/standalone/configuration/ && \
-    sudo sed -i 's/<deployment-scanner/<deployment-scanner auto-deploy-exploded="true"/g' standalone.xml
-
 CMD sudo sh ~/wildfly/bin/standalone.sh -b 0.0.0.0 && \
 	tail -f ~/wildfly/standalone/log/server.log
-
-
