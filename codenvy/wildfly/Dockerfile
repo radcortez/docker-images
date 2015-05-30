@@ -18,5 +18,13 @@ RUN cd ~ && \
 
 EXPOSE 8080
 
+RUN cd ~ && \
+    sudo rm -rf *.tar.gz
+
+WORKDIR /home/user
+
 CMD sudo sh ~/wildfly/bin/standalone.sh -b 0.0.0.0 && \
+    sudo touch ~/wildfly/standalone/deployments/ROOT.war.dodeploy && \
 	tail -f ~/wildfly/standalone/log/server.log
+
+
