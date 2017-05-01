@@ -14,6 +14,7 @@ RUN set -x \
 	&& mv apache-tomee-plus-7.0.3/* /usr/local/tomee \
 	&& rm -Rf apache-tomee-plus-7.0.3 \
 	&& rm bin/*.bat \
+	&& rm webapps/* \
 	&& rm tomee.tar.gz*
 
 EXPOSE 8080
